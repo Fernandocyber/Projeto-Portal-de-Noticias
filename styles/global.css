@@ -54,6 +54,7 @@ margin-inline: auto;
 
 main {
     margin: 40px;
+    gap: 80px;
 }
 
 .content-tag{
