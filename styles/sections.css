@@ -1,96 +1,196 @@
-/* sections.css */
+section {
+  header {
+    font: var(--text-span);
+    padding-block: 1.2rem 2.4rem;
+    border-top: 1px solid var(--stroke-color);
+    a { 
 
-#featured {
-    grid-area: featured;
+        justify-self: end;
+        align-items: center;
+        gap: 8px;
 
-    img {
-        height: 100%;
-        object-fit: cover;
+        span {
+            background-image: url(../assets/icons/ArrowRight.svg);
+            height: 16px;
+            width: 16px;
+           
+        }
+
+        &:hover span{
+            background-image: url(../assets/icons/ArrowRight-hover.svg);
+        }
     }
+  }
+
+  a {
+    justify-self: end;
+    align-items: center;
+    gap: 0.8rem;
+
+    span { 
+      width: 1.6rem;
+      height: 1.6rem;
+      background-color: url(../assets/icons/ArrowRight.svg);
+    }
+
+    &:hover {
+      span {
+        background-color: url(../assets/icons/ArrowRight-hover.svg);
+      }     
+    }
+  }
 }
 
-.card {
-    border-radius: 4px;
+#featured {
+  grid-area: featured;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card {
+    border-radius: 0.4rem;
     overflow: hidden;
     position: relative;
 
     &::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        top: 50%;
-        background: linear-gradient(
-            180deg,
-            transparent 0%,
-            #020617 100%
-        );
-    }
-}  
-
-figcaption {
-    position: absolute;
-    bottom: 0;
-    padding: 24px;
-
-    &:has(.text-lg) {
-        padding: 12px;
+      content: '';
+      position: absolute;
+      inset: 0;
+      top: 50%;
+      background: linear-gradient(180deg, transparent 0%, #020617 100%);
     }
 
-    h2 {
-        margin-top: 8px;
+    figcaption {
+      position: absolute;
+      bottom: 0;
+      padding: 2.4rem;
+
+      h2 {
+        margin-top: 0.8rem;
+      }
+
+      &:has(.text-lg) {
+        padding: 1.2rem;
+      }
     }
+  }
+
+  @media (width <= 80em) {
+    & h2 {
+      font-size: 1.4rem;
+    }
+  }
 }
 
 #weekly {
-    grid-area: weekly;
+  grid-area: weekly;
+  & > div {
+    grid-template-columns: repeat(4, 29.2rem);
+  }
 
-    &>div {
-        grid-template-columns: repeat(4, 292px);
+  img {
+    height: 16rem;
+  }
+
+  figure {
+    position: relative;
+    
+    .content-tag {
+      position: absolute;
+      top: 0.8rem;
+      left: 0.8rem;
     }
 
-    img {
-        height: 160px;
+    p {
+      margin-top: 0.8rem;
+      font-weight: 900;
+    }
+  }
+
+  @media (width <= 80em) {
+    & figure {
+      width: 30rem;
     }
 
-    figure {
-        position: relative;
-
-        .content-tag {
-            position: absolute;
-            top: 8px;
-            left: 8px;
-        }
-
-        p {
-            margin-top: 8px;
-            font-weight: 800;
-        }
+    & header {
+      display: grid;
+    
+      & a {
+        display: grid;
+      }
     }
+  }
 }
 
 #ai {
-    grid-area: ai;
-    width: 176px;
+  grid-area: ai;
+  img {
+    width: 17.6rem;
     aspect-ratio: 1/1;
     object-fit: cover;
-}
+  }
 
-h3 {
-    margin-block: 8px 4px;
+  h3 {
+    margin-block: 0.8rem 0.4rem;
+  }
+
+  @media (width <= 80em) {
+    & header {
+      display: grid;
+    
+      & h3 {
+        font-size: 1.4rem;
+      }
+
+      & a {
+        display: grid;
+      }
+    }
+
+    & article {
+      max-width: 30.8rem;
+      
+      & h3 {
+        font-size: 1.4rem;
+      }
+    }
+  }
 }
 
 aside {
-    grid-area: aside;
+  grid-area: aside;
 }
 
 #more {
-    h3 {
-        margin-top: 8px;
+  margin-top: 3.2rem;
+  
+  h3 {
+    margin-top: 0.8rem;
+  }
+
+  img {
+    width: 7.2rem;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+  }
+
+  @media (width <= 80em) {
+    & header {
+      display: grid;
+
+      & a {
+        display: grid;
+      }
     }
 
-    img {
-        width: 72px;
-        aspect-ratio: 1/1;
-        object-fit: cover;
+    & article {
+      display: grid;
+
+      & h3 {
+        font-size: 1.4rem;
+      }
     }
+  }
 }

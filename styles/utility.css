@@ -1,41 +1,43 @@
-/* utility.css */
 
 .grid {
-    display: grid;
+  display: grid;
 }
 
-.grid-flow-col {
-    grid-auto-flow: column;
+.grid-flow-column {
+  grid-auto-flow: column;
 }
 
-.grid-cols-2 {
-    grid-template-columns: 1fr 1fr;
+.grid-columns-2 {
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .gap-16 {
-    gap: 16px;
+  gap: 1.6rem;
 }
 
 .gap-32 {
-    gap: 32px;
+  gap: 3.2rem;
 }
 
 .text-2xl {
-    font: var(--font-h1);
+  font: var(--h1);
 }
 
 .text-xl {
-    font: var(--font-h2);
+  font: var(--h2);
 }
 
 .text-lg {
-    font: var(--font-h3);
+  font: var(--h3);
 }
 
 .text-sm {
-    font: var(--font-span);
+  font: var(--text-sm);
 }
 
-.text-paragraph {
-    font: var(--font-paragraph);
+@media (width <= 80em) {
+  .grid {
+    display: flex;
+    flex-direction: column;
+  }
 }
